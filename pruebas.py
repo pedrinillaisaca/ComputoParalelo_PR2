@@ -1,24 +1,23 @@
-"""import numpy as np
-a = np.array([1, 2, 3, 4, 5, 6, 7])
+import numpy as np
+# Para importar la biblioteca random al completo
+import random
+import os
 
-ped=[1, 2, 3, 4, 5, 6, 7]
-#a = np.insert(a, 3, 0)
-a[2]=1
-siet=6
-suped=[]
-if siet==7:
-    suped=ped[1:siet-1]
-
-print(suped)
-
-for i in range(4):
-    print(i)
-"""
-import json
-import numpy
-import sys
-
-data = numpy.array(json.loads(sys.argv[1]))
-#data1 = numpy.array(json.loads(sys.argv[2]))
-print(data)
-#print(data1)
+# Para importar sólo determinadas funciones (randrange y choice)
+from random import randrange, choice
+a=[]
+dimension=2000
+for i in range(dimension): 
+    b=[]        
+    for j in range(dimension):       
+        b.append(random.randint(1,9))
+    a.append(b)            
+vec=[]
+for i in range(dimension):       
+        vec.append(random.randint(1,9))
+data =np.asarray(a,dtype=np.int)
+data1 =np.asarray(vec,dtype=np.int)
+os.remove("mat.txt")
+os.remove("vec.txt")
+np.savetxt("mat.txt",data)
+np.savetxt("vec.txt",data1)
