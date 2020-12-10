@@ -25,4 +25,4 @@ prodmv(vec, mat, len(vec))
 end_time = time.time()
 
 #print('Tiempo: {:,.2f}'.format(float(end_time - start_time)))
-print(float(end_time - start_time))
+print("Tiempo: ",float(end_time - start_time))
